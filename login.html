@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    
+    <style>
+        body {
+            /* Background image styling */
+            background-image: url('images/login-page.jpeg'); /* Update with your image path */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 80px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .login-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2><center>Login</center></h2>
+        <form action="login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="logintype">Login Type:</label>
+            <select id="logintype" name="logintype" required>
+                <option value="Customer">Customer</option>
+                <option value="StoreManager">Store Manager</option>
+                <option value="Salesmen">Salesmen</option>
+            </select>
+
+            <center><button type="submit">Login</button></center>
+        </form>
+    </div>
+</body>
+</html>

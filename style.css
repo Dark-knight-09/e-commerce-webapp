@@ -1,0 +1,88 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8fc6d5;
+}
+
+header {
+    background-color: #6c95a4;
+    color: #161515;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.postcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.postcard {
+    background-color: #e2fdff;
+    border: 1px solid #cdeefc;
+    border-radius: 8px;
+    margin: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure consistent alignment */
+}
+
+.postcard:hover {
+    transform: scale(1.05);
+}
+
+.postcard-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Maintain aspect ratio, crop if necessary */
+}
+
+.postcard-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Ensures the content area fills up the available space */
+}
+
+.postcard-content h2 {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.price {
+    font-size: 1.1em;
+    color: #e74c3c;
+}
+
+.manufacturer, .condition, .discount {
+    margin: 5px 0;
+    color: #555;
+}
+
+.buy-now , .view-product {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+}
+
+.buy-now:hover, .view-product:hover {
+    background-color: #218838;
+}

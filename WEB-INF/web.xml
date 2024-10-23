@@ -1,0 +1,199 @@
+<!--<web-app>
+
+<servlet>
+<servlet-name>sonoojaiswal</servlet-name>
+<servlet-class>DemoServ</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>sonoojaiswal</servlet-name>
+<url-pattern>/welcome</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+-->
+
+<web-app>
+    <servlet>
+        <servlet-name>catalogServlet</servlet-name>
+        <servlet-class>DemoServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>catalogServlet</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cartServlet</servlet-name>
+        <servlet-class>CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>doorLockServlet</servlet-name>
+        <servlet-class>DoorLock</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>doorLockServlet</servlet-name>
+        <url-pattern>/doorlock</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>smartSpeakerServlet</servlet-name>
+        <servlet-class>SmartSpeaker</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>smartSpeakerServlet</servlet-name>
+        <url-pattern>/smartspeaker</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+        <servlet-name>smartLightingServlet</servlet-name>
+        <servlet-class>SmartLighting</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>smartLightingServlet</servlet-name>
+        <url-pattern>/smartlighting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>smartThermostatServlet</servlet-name>
+        <servlet-class>SmartThermostatServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>smartThermostatServlet</servlet-name>
+        <url-pattern>/thermostat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>logoutServlet</servlet-name>
+    <servlet-class>LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>logoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>RegisterServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewProductServlet</servlet-name>
+    <servlet-class>ViewProductServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ViewProductServlet</servlet-name>
+    <url-pattern>/viewproducts</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>OrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/placeOrder</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>MyOrders</servlet-name>
+    <servlet-class>MyOrders</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>MyOrders</servlet-name>
+    <url-pattern>/myorders</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>Trending</servlet-name>
+    <servlet-class>Trending</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Trending</servlet-name>
+    <url-pattern>/trending</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>DeleteOrderServlet</servlet-name>
+    <servlet-class>DeleteOrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteOrderServlet</servlet-name>
+    <url-pattern>/deleteOrder</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>StoreManagerServlet</servlet-name>
+    <servlet-class>StoreManagerServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>StoreManagerServlet</servlet-name>
+    <url-pattern>/storemanagerservlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>MongoDBDataStoreUtilities</servlet-name>
+    <servlet-class>MongoDBDataStoreUtilities</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>MongoDBDataStoreUtilities</servlet-name>
+    <url-pattern>/AddReview</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>inventoryServlet</servlet-name>
+        <servlet-class>inventoryServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+        <servlet-name>inventoryServlet</servlet-name>
+        <url-pattern>/inventory</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>SalesreportServlet</servlet-name>
+        <servlet-class>SalesreportServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SalesreportServlet</servlet-name>
+        <url-pattern>/salesReport</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>SearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+</web-app>

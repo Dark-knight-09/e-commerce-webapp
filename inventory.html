@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For the Bar Chart -->
+    <script>
+        let inventoryChartInstance = null;
+        let salesChartInstance = null;
+        function fetchInventory() {
+    fetch('/demo/inventory')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Log the data to see the structure
+        generateTable(data.allProducts);
+        generateBarChart(data.SaleProducts);
+        generateOnSaleTable(data.onSaleProducts);
+        generateRebateTable(data.rebateProducts);
+
+
+        //// sales report fields
+        document.getElementById('salesReportTitle').style.display = 'none';
+        document.getElementById('productsSoldTitle').style.display = 'none';
+        document.getElementById('productsSoldTable').style.display = 'none';
+        document.getElementById('dailySalesTitle').style.display = 'none';
+        document.getElementById('dailySalesTable').style.display = 'none';
+        document.getElementById('salesChartTitle').style.display = 'none';
+        document.getElementById('salesChart').style.display = 'none';
+
+         // Show the hidden elements
+         document.getElementById('inventoryTitle').style.display = 'block';
+                document.getElementById('productTable').style.display = 'block';
+                document.getElementById('barChartTitle').style.display = 'block';
+                document.getElementById('productChart').style.display = 'block';
+                document.getElementById('onSaleTitle').style.display = 'block';
+                document.getElementById('onSaleTable').style.display = 'block';
+                document.getElementById('rebateTitle').style.display = 'block';
+                document.getElementById('rebateTable').style.display = 'block';
+
+
+
+                
+
+    })
+    .catch(error => console.error('Error fetching inventory:', error)); // Log any errors
+}
+
+function fetchSalesReport() {
+            fetch('/demo/salesReport')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // Log the data to see the structure
+                    generateProductsSoldTable(data.productsSold);
+                    generateDailySalesTable(data.dailySales);
+                    generateSalesBarChart(data.productsSold);
+
+                    // Hide the inventory report fields
+                    document.getElementById('inventoryTitle').style.display = 'none';
+                document.getElementById('productTable').style.display = 'none';
+                document.getElementById('barChartTitle').style.display = 'none';
+                document.getElementById('productChart').style.display = 'none';
+                document.getElementById('onSaleTitle').style.display = 'none';
+                document.getElementById('onSaleTable').style.display = 'none';
+                document.getElementById('rebateTitle').style.display = 'none';
+                document.getElementById('rebateTable').style.display = 'none';
+
+
+
+                    // Show the hidden elements for sales report
+                    document.getElementById('salesReportTitle').style.display = 'block';
+                    document.getElementById('productsSoldTitle').style.display = 'block';
+                    document.getElementById('productsSoldTable').style.display = 'block';
+                    document.getElementById('dailySalesTitle').style.display = 'block';
+                    document.getElementById('dailySalesTable').style.display = 'block';
+                    document.getElementById('salesChartTitle').style.display = 'block';
+                    document.getElementById('salesChart').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function generateTable(data) {
+            let tableHTML = `<table border='1'><tr><th>Product Name</th><th>Price</th><th>Available Items</th></tr>`;
+            data.forEach(product => {
+                tableHTML += `<tr><td>${product.name}</td><td>${product.price}</td><td>${product.available}</td></tr>`;
+            });
+            tableHTML += `</table>`;
+            document.getElementById('productTable').innerHTML = tableHTML;
+        }
+
+                function generateBarChart(data) {
+            const ctx = document.getElementById('productChart').getContext('2d');
+            if (inventoryChartInstance) {
+            inventoryChartInstance.destroy();
+        }
+            inventoryChartInstance=new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(item => item.name),
+                    datasets: [
+                        {
+                            label: 'Available inventory',
+                            data: data.map(item => item.available),
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Total inventory',
+                            data: data.map(item => item.total),
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateOnSaleTable(data) {
+            let tableHTML = `<table border='1'><tr><th>Product Name</th><th>Price</th><th>Discount</th><th>Total Sales</th></tr>`;
+            data.forEach(product => {
+                tableHTML += `<tr><td>${product.prod_name}</td><td>${product.prod_price}</td><td>${product.prod_disc}</td><td>${product.Sales}</td></tr>`;
+            });
+            tableHTML += `</table>`;
+            document.getElementById('onSaleTable').innerHTML = tableHTML;
+        }
+
+        function generateRebateTable(data) {
+            let tableHTML = `<table border='1'><tr><th>Product Name</th><th>Price</th><th>Sales<th></tr>`;
+            data.forEach(product => {
+                tableHTML += `<tr><td>${product.prod_name}</td><td>${product.prod_price}</td><td>${product.Sales}</td></tr>`;
+            });
+            tableHTML += `</table>`;
+            document.getElementById('rebateTable').innerHTML = tableHTML;
+        }
+
+        function generateProductsSoldTable(data) {
+            let tableHTML = `<tr>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                                <th>Items Sold</th>
+                                <th>Total Sales (in dollars)</th>
+                             </tr>`;
+            data.forEach(product => {
+                tableHTML += `<tr>
+                                <td>${product.prod_name}</td>
+                                <td>${product.prod_price}</td>
+                                <td>${product.items_sold}</td>
+                                <td>${product.total_sales}</td>
+                              </tr>`;
+            });
+            document.getElementById('productsSoldTable').innerHTML = tableHTML;
+        }
+
+        function generateDailySalesTable(data) {
+            let tableHTML = `<tr>
+                                <th>Date</th>
+                                <th>Items Sold</th>
+                                <th>Total Sales (in Dollars) </th>
+                                
+                             </tr>`;
+            data.forEach(sale => {
+                tableHTML += `<tr>
+                                <td>${sale.sale_date}</td>
+                                <th>${sale.items_sold}</th>
+                                <td>${sale.total_sales}</td>
+                              </tr>`;
+            });
+            document.getElementById('dailySalesTable').innerHTML = tableHTML;
+        }
+        function generateSalesBarChart(data) {
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            if (salesChartInstance) {
+            salesChartInstance.destroy();
+            inventoryChartInstance.destroy();
+        }
+            salesChartInstance =new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(item => item.prod_name),
+                    datasets: [{
+                        label: 'Total Sales (in dollars)',
+                        data: data.map(item => item.total_sales),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Store Inventory Management</h1>
+    <button onclick="fetchInventory()">Generate Inventory Report</button>
+    <button onclick="fetchSalesReport()">Generate Sales Report</button>
+        <h2 id="inventoryTitle" style="display:none;">Product Inventory</h2>
+    <div id="productTable" style="display:none;"></div>
+    
+    <h2 id="barChartTitle" style="display:none;">Products Bar Chart</h2>
+    <canvas id="productChart" style="display:none;"></canvas>
+    
+    <h2 id="onSaleTitle" style="display:none;">Products on Sale</h2>
+    <div id="onSaleTable" style="display:none;"></div>
+    
+    <h2 id="rebateTitle" style="display:none;">Products with Manufacturer Rebates</h2>
+    <div id="rebateTable" style="display:none;"></div>
+
+    <h1 id="salesReportTitle" style="display:none;">Sales Report</h1>
+    <h2 id="productsSoldTitle" style="display:none;">Products Sold</h2>
+    <table id="productsSoldTable" border="1" style="display:none;">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Items Sold</th>
+            <th>Total Sales</th>
+        </tr>
+    </table>
+
+    <h2 id="dailySalesTitle" style="display:none;">Daily Sales</h2>
+    <table id="dailySalesTable" border="1" style="display:none;">
+        <tr>
+            <th>Date</th>
+            <th>Total Sales</th>
+        </tr>
+    </table>
+
+    <h2 id="salesChartTitle" style="display:none;">Sales Bar Chart</h2>
+    <canvas id="salesChart" width="400" height="200" style="display:none;"></canvas>
+
+    
+</body>
+</html>
