@@ -196,4 +196,14 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
+<servlet>
+    <servlet-name>CustomerServiceServlet</servlet-name>
+    <servlet-class>CustomerServiceServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>CustomerServiceServlet</servlet-name>
+    <url-pattern>/customerService</url-pattern>
+</servlet-mapping>
+
 </web-app>
