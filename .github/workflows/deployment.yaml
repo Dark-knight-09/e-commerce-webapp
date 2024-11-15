@@ -26,44 +26,44 @@ jobs:
         run: |
           mkdir -p lib
           echo "Downloading libraries"
-          wget -O lib/annotations-api.jar https://repo1.maven.org/maven2/org/glassfish/annotations-api/3.0.0/annotations-api-3.0.0.jar
-          wget -O lib/tomcat-api.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/9.0.52/tomcat-api-9.0.52.jar
-          wget -O lib/bson-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/bson/3.12.10/bson-3.12.10.jar
-          wget -O lib/tomcat-coyote-ffm.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-coyote/9.0.52/tomcat-coyote-9.0.52.jar
-          wget -O lib/catalina-ant.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ant/9.0.52/catalina-ant-9.0.52.jar
-          wget -O lib/catalina-ha.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ha/9.0.52/catalina-ha-9.0.52.jar
-          wget -O lib/catalina-ssi.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ssi/9.0.52/catalina-ssi-9.0.52.jar
-          wget -O lib/catalina-storeconfig.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-storeconfig/9.0.52/catalina-storeconfig-9.0.52.jar
-          wget -O lib/catalina-tribes.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-tribes/9.0.52/catalina-tribes-9.0.52.jar
-          wget -O lib/catalina.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina/9.0.52/catalina-9.0.52.jar
-          wget -O lib/ecj-4.20.jar https://repo1.maven.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.20.0/ecj-4.20.0.jar
-          wget -O lib/el-api.jar https://repo1.maven.org/maven2/org/glassfish/web/el-api/3.0.0/el-api-3.0.0.jar
-          wget -O lib/gson-2.8.8.jar https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar
-          wget -O lib/jasper-el.jar https://repo1.maven.org/maven2/org/apache/tomcat/jasper-el/9.0.52/jasper-el-9.0.52.jar
-          wget -O lib/jasper.jar https://repo1.maven.org/maven2/org/apache/tomcat/jasper/9.0.52/jasper-9.0.52.jar
-          wget -O lib/jaspic-api.jar https://repo1.maven.org/maven2/javax/security/auth/message/jaspic-api/1.1.1/jaspic-api-1.1.1.jar
-          wget -O lib/jsp-api.jar https://repo1.maven.org/maven2/javax/servlet/jsp-api/2.2/jsp-api-2.2.jar
-          wget -O lib/mongodb-driver-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.12.10/mongodb-driver-3.12.10.jar
-          wget -O lib/mongodb-driver-core-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.12.10/mongodb-driver-core-3.12.10.jar
-          wget -O lib/mysql-connector-j-8.4.0.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.4.0/mysql-connector-java-8.4.0.jar
-          wget -O lib/servlet-api.jar https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
-          wget -O lib/tomcat-coyote.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-coyote/9.0.52/tomcat-coyote-9.0.52.jar
-          wget -O lib/tomcat-dbcp.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-dbcp/9.0.52/tomcat-dbcp-9.0.52.jar
-          wget -O lib/tomcat-i18n-cs.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-cs/9.0.52/tomcat-i18n-cs-9.0.52.jar
-          wget -O lib/tomcat-i18n-de.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-de/9.0.52/tomcat-i18n-de-9.0.52.jar
-          wget -O lib/tomcat-i18n-es.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-es/9.0.52/tomcat-i18n-es-9.0.52.jar
-          wget -O lib/tomcat-i18n-fr.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-fr/9.0.52/tomcat-i18n-fr-9.0.52.jar
-          wget -O lib/tomcat-i18n-ja.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ja/9.0.52/tomcat-i18n-ja-9.0.52.jar
-          wget -O lib/tomcat-i18n-ko.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ko/9.0.52/tomcat-i18n-ko-9.0.52.jar
-          wget -O lib/tomcat-i18n-pt-BR.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-pt-BR/9.0.52/tomcat-i18n-pt-BR-9.0.52.jar
-          wget -O lib/tomcat-i18n-ru.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ru/9.0.52/tomcat-i18n-ru-9.0.52.jar
-          wget -O lib/tomcat-i18n-zh-CN.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-zh-CN/9.0.52/tomcat-i18n-zh-CN-9.0.52.jar
-          wget -O lib/tomcat-jdbc.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jdbc/9.0.52/tomcat-jdbc-9.0.52.jar
-          wget -O lib/tomcat-jni.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jni/9.0.52/tomcat-jni-9.0.52.jar
-          wget -O lib/tomcat-util-scan.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.52/tomcat-util-scan-9.0.52.jar
-          wget -O lib/tomcat-util.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util/9.0.52/tomcat-util-9.0.52.jar
-          wget -O lib/tomcat-websocket.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-websocket/9.0.52/tomcat-websocket-9.0.52.jar
-          wget -O lib/websocket-api.jar https://repo1.maven.org/maven2/javax/websocket/websocket-api/1.1/websocket-api-1.1.jar
+          wget -L -v -O lib/annotations-api.jar https://repo1.maven.org/maven2/org/glassfish/annotations-api/3.0.0/annotations-api-3.0.0.jar || true
+          wget -L -v -O lib/tomcat-api.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/9.0.52/tomcat-api-9.0.52.jar || true
+          wget -L -v -O lib/bson-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/bson/3.12.10/bson-3.12.10.jar || true
+          wget -L -v -O lib/tomcat-coyote-ffm.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-coyote/9.0.52/tomcat-coyote-9.0.52.jar || true
+          wget -L -v -O lib/catalina-ant.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ant/9.0.52/catalina-ant-9.0.52.jar || true
+          wget -L -v -O lib/catalina-ha.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ha/9.0.52/catalina-ha-9.0.52.jar || true
+          wget -L -v -O lib/catalina-ssi.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-ssi/9.0.52/catalina-ssi-9.0.52.jar || true
+          wget -L -v -O lib/catalina-storeconfig.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-storeconfig/9.0.52/catalina-storeconfig-9.0.52.jar || true
+          wget -L -v -O lib/catalina-tribes.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina-tribes/9.0.52/catalina-tribes-9.0.52.jar || true
+          wget -L -v -O lib/catalina.jar https://repo1.maven.org/maven2/org/apache/tomcat/catalina/9.0.52/catalina-9.0.52.jar || true
+          wget -L -v -O lib/ecj-4.20.jar https://repo1.maven.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.20.0/ecj-4.20.0.jar || true
+          wget -L -v -O lib/el-api.jar https://repo1.maven.org/maven2/org/glassfish/web/el-api/3.0.0/el-api-3.0.0.jar || true
+          wget -L -v -O lib/gson-2.8.8.jar https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar || true
+          wget -L -v -O lib/jasper-el.jar https://repo1.maven.org/maven2/org/apache/tomcat/jasper-el/9.0.52/jasper-el-9.0.52.jar || true
+          wget -L -v -O lib/jasper.jar https://repo1.maven.org/maven2/org/apache/tomcat/jasper/9.0.52/jasper-9.0.52.jar || true
+          wget -L -v -O lib/jaspic-api.jar https://repo1.maven.org/maven2/javax/security/auth/message/jaspic-api/1.1.1/jaspic-api-1.1.1.jar || true
+          wget -L -v -O lib/jsp-api.jar https://repo1.maven.org/maven2/javax/servlet/jsp-api/2.2/jsp-api-2.2.jar || true
+          wget -L -v -O lib/mongodb-driver-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/mongodb-driver/3.12.10/mongodb-driver-3.12.10.jar || true
+          wget -L -v -O lib/mongodb-driver-core-3.12.10.jar https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/3.12.10/mongodb-driver-core-3.12.10.jar || true
+          wget -L -v -O lib/mysql-connector-j-8.4.0.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.4.0/mysql-connector-java-8.4.0.jar || true
+          wget -L -v -O lib/servlet-api.jar https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar || true
+          wget -L -v -O lib/tomcat-coyote.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-coyote/9.0.52/tomcat-coyote-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-dbcp.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-dbcp/9.0.52/tomcat-dbcp-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-cs.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-cs/9.0.52/tomcat-i18n-cs-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-de.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-de/9.0.52/tomcat-i18n-de-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-es.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-es/9.0.52/tomcat-i18n-es-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-fr.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-fr/9.0.52/tomcat-i18n-fr-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-ja.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ja/9.0.52/tomcat-i18n-ja-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-ko.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ko/9.0.52/tomcat-i18n-ko-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-pt-BR.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-pt-BR/9.0.52/tomcat-i18n-pt-BR-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-ru.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-ru/9.0.52/tomcat-i18n-ru-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-i18n-zh-CN.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-i18n-zh-CN/9.0.52/tomcat-i18n-zh-CN-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-jdbc.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jdbc/9.0.52/tomcat-jdbc-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-jni.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-jni/9.0.52/tomcat-jni-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-util-scan.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util-scan/9.0.52/tomcat-util-scan-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-util.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util/9.0.52/tomcat-util-9.0.52.jar || true
+          wget -L -v -O lib/tomcat-websocket.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-websocket/9.0.52/tomcat-websocket-9.0.52.jar || true
+          wget -L -v -O lib/websocket-api.jar https://repo1.maven.org/maven2/javax/websocket/websocket-api/1.1/websocket-api-1.1.jar || true
         shell: bash
 
       - name: Checkout code
