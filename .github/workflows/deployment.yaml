@@ -73,7 +73,10 @@ jobs:
       
       - name: compile Code
         run: |
-          ls -l lib/
+          ls -l
+          pwd
+          ls ..
+          ls -l ./lib/
           javac -cp "lib/*"  WEB-INF/classes/*.java
       
       - name: convert into war file
