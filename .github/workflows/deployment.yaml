@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          
+
       - name: Checkout code
         uses: actions/checkout@v4
         with: 
@@ -29,10 +29,6 @@ jobs:
       
       - name: compile Code
         run: |
-          ls -l
-          pwd
-          ls ..
-          ls -l ./lib/
           javac -cp "lib/*"  WEB-INF/classes/*.java
       
       - name: convert into war file
@@ -43,7 +39,7 @@ jobs:
       - name: private key 
         run: |
           echo ${{secrets.PRIVATE_KEY}} >> private.pem
-          sudo chmod 600 private.key
+          sudo chmod 600 private.pem
       
       - name: copying to deployment machine
         run: |
