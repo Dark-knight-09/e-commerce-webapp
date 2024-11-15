@@ -38,7 +38,7 @@ jobs:
       
       - name: private key 
         run: |
-          echo ${{secrets.PRIVATE_KEY}} > private.pem
+          echo "${{secrets.PRIVATE_KEY}}" > private.pem
           sudo chmod 600 private.pem
       
       - name: copying to deployment machine
