@@ -25,6 +25,7 @@ jobs:
       - name: Downloading Jar libraries
         run: |
           mkdir -p lib
+          pwd
           echo "Downloading libraries"
           wget -L -v -O lib/annotations-api.jar https://repo1.maven.org/maven2/org/glassfish/annotations-api/3.0.0/annotations-api-3.0.0.jar || true
           wget -L -v -O lib/tomcat-api.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/9.0.52/tomcat-api-9.0.52.jar || true
@@ -64,6 +65,7 @@ jobs:
           wget -L -v -O lib/tomcat-util.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-util/9.0.52/tomcat-util-9.0.52.jar || true
           wget -L -v -O lib/tomcat-websocket.jar https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-websocket/9.0.52/tomcat-websocket-9.0.52.jar || true
           wget -L -v -O lib/websocket-api.jar https://repo1.maven.org/maven2/javax/websocket/websocket-api/1.1/websocket-api-1.1.jar || true
+          ls -l 
         shell: bash
 
       - name: Checkout code
